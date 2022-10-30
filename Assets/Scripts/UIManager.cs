@@ -18,10 +18,15 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tiempo.text = Time.time.ToString("00.00");
-        puntuacion.text = GameManager.instance.puntuacion.ToString();
+        puntuacion.text = GameManager.instance.puntuacion.ToString();  
         vida.text = GameManager.instance.vidas.ToString();
-        if(GameManager.instance.vidas <= 0)
+
+        if (GameManager.instance.vidas > 0)
+        {
+            tiempo.text = Time.time.ToString("00.00");
+        }
+       
+        if (GameManager.instance.vidas <= 0)
         {
             GameOver.SetActive(true);
         }

@@ -35,7 +35,7 @@ public class AsteroidManager : MonoBehaviour
             Debug.Log("Instanciando asteroide: " + i);
             Vector3 posicion = new Vector3(Random.Range(-limitX, limitX), Random.Range(-limitY, limitY));
 
-            while (Vector3.Distance(posicion, new Vector3(0,0)) < 2)
+            while (Vector3.Distance(posicion, new Vector3(0,0)) < 5)
             {
                 posicion = new Vector3(Random.Range(-limitX, limitX), Random.Range(-limitY, limitY));
             }

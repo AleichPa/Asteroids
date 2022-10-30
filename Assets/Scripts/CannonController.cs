@@ -19,6 +19,7 @@ public class CannonController : MonoBehaviour
         {
             GameObject temp = Instantiate(bala, boquilla.transform.position, transform.rotation);
             Destroy(temp, 1.5f);
+
         }
     }
 }

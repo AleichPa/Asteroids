@@ -16,7 +16,7 @@ public class BulletController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,7 +24,7 @@ public class BulletController : MonoBehaviour
         if (collision.tag == "Asteroide")
         {
             collision.gameObject.GetComponent<AsteroideControl>().Muerte();
-            Destroy(gameObject);  
+            Destroy(gameObject);
         }
     }
 }

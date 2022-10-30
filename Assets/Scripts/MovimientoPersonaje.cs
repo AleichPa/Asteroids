@@ -12,6 +12,7 @@ public class MovimientoPersonaje : MonoBehaviour
     public float speed = 10;
     public float rotationspeed = 10;
     public GameObject ParticulasMuerte;
+    public GameObject[] myCannons;
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +70,40 @@ public class MovimientoPersonaje : MonoBehaviour
         if (GameManager.instance.vidas <= 0)
         {
             Destroy(gameObject);
+        }   
+    }
+
+    public void ChangeCannon(int theCannon)
+    {
+        //Desactivar todos los cañones
+        foreach(GameObject currentCannon in myCannons)
+        {
+            currentCannon.SetActive(false);
+        }
+
+        //Activar el cañon que queremos
+
+        myCannons[theCannon].SetActive(true);
+        StartCoroutine(RutinaTemporizadorPowerUp());
+    }
+
+    IEnumerator RutinaTemporizadorPowerUp()
+    {
+
+        if (myCannons[3] == true)
+        {
+            yield return new WaitForSeconds(4);
+            myCannons[3].SetActive(false);
+            myCannons[0].SetActive(true);
+        }
+
+        if (myCannons[1] == true)
+        {
+            yield return new WaitForSeconds(10);
+            myCannons[1].SetActive(false);
         }
     }
+
+
+
 }

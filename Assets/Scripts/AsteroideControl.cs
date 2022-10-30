@@ -6,6 +6,7 @@ public class AsteroideControl : MonoBehaviour
 {
     public float speed_min;
     public float speed_max;
+    private bool muerte;
     Rigidbody2D rb;
     public AsteroidManager manager;
     // Start is called before the first frame update
@@ -27,6 +28,9 @@ public class AsteroideControl : MonoBehaviour
 
     public void Muerte()
     {
+        if (!muerte)
+        {
+            muerte = true;
         if (transform.localScale.x > 0.25f)
         {
 
@@ -42,6 +46,7 @@ public class AsteroideControl : MonoBehaviour
         GameManager.instance.puntuacion += 100;
         manager.asteroides -= 1;
         Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
