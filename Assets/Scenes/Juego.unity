@@ -2603,7 +2603,6 @@ MonoBehaviour:
   - {fileID: 9206653163576164961, guid: aff54b46bd7b1ed40bb7e033841bbe73, type: 3}
   - {fileID: 8513588204898355431, guid: 1a4122c305ff4cb4ab694b4684576407, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
   limitX: 10
   limitY: 6
   powerups_min: 0

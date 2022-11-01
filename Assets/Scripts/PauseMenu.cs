@@ -18,7 +18,6 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
    private void Update()
     {
-
         if (Input.GetKey(KeyCode.Escape))
         {
             PauseButton();
@@ -40,6 +39,5 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1;
-        tiempo.text = (Time.time - startTime).ToString("00.00");
     }
 }
